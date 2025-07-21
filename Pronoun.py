@@ -57,11 +57,11 @@ if st.button("Check Grammar"):
                 errors.append((token.text, "Possibly misspelled word", spell.correction(token.text.lower())))
 
         if errors:
-            st.error("⚠️ Issues found:")
+            st.error(" Issues found:")
             for word, reason, suggestion in errors:
                 if suggestion:
-                    st.markdown(f"- ❌ **{word}** — {reason} (Suggested: **{suggestion}**) ")
+                    st.markdown(f"- **{word}** — {reason} (Suggested: **{suggestion}**) ")
                 else:
-                    st.markdown(f"- ❌ **{word}** — {reason}")
+                    st.markdown(f"- **{word}** — {reason}")
         else:
             st.success("✅ No pronoun and spelling errors detected.")
